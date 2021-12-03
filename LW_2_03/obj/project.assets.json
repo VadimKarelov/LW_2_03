@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\Vadim\\University\\IT\\Labs2\\LW_2_03\\LW_2_03\\LW_2_03.csproj",
+      "projectUniqueName": "D:\\University\\2 year\\OOP\\LW_2_03\\LW_2_03\\LW_2_03.csproj",
       "projectName": "LW_2_03",
-      "projectPath": "D:\\Documents\\Vadim\\University\\IT\\Labs2\\LW_2_03\\LW_2_03\\LW_2_03.csproj",
+      "projectPath": "D:\\University\\2 year\\OOP\\LW_2_03\\LW_2_03\\LW_2_03.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\Vadim\\University\\IT\\Labs2\\LW_2_03\\LW_2_03\\obj\\",
+      "outputPath": "D:\\University\\2 year\\OOP\\LW_2_03\\LW_2_03\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\IDE\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -68,7 +68,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
