@@ -6,48 +6,51 @@ namespace LW_2_03
     {
         static void Main(string[] args)
         {
-            decimal a = 0.1m;
-            decimal b = 1;
+            double a = 0.1;
+            double b = 1;
             int k = 10;
-            decimal e = 0.0001m;
+            decimal e = 0.00000000000000001m; // 16
             int n = 25;
-            decimal step = (b - a) / k;
+            double step = (b - a) / k;
 
-            for (decimal x = a; x <= b; x += step)
+            for (double x = a; x <= b; x += step)
             {
-                decimal SN = 0, SE = 0, prevSE = 1;
+                double SN = 0;
+                decimal SE = 0, prevSE = 1;
                 ulong factorial = 1;
-                decimal pow = 1;
+                double pow = 1;
                 // SN
                 for (uint i = 0; i < n; i++)
                 {
-                    SN += (decimal)Math.Cos(i * Math.PI / 4) / factorial * pow;
                     if (i != 0)
                     {
                         factorial *= i;
-                        pow *= x;
                     }
+                    SN += (pow * Math.Cos(i * Math.PI / 4)) / factorial;                    
+                    pow *= x;
                 }
                 // SE
                 factorial = 1;
-                pow = 1;
-                for (uint i = 0; Math.Abs(prevSE - SE) > e; i++)
+                //pow = 1;
+                decimal pow1 = 1;
+                //for (uint i = 0; Math.Abs(prevSE - SE) > e; i++)
+                for (uint i = 0; prevSE - SE > 0 && prevSE - SE > e || prevSE - SE < 0 && prevSE - SE < -e; i++)
                 {
                     prevSE = SE;
-                    SE += (decimal)Math.Cos(i * Math.PI / 4) / factorial * pow;
                     if (i != 0)
                     {
                         factorial *= i;
-                        pow *= x;
                     }
+                    SE += (pow1 * (decimal)Math.Cos(i * Math.PI / 4)) / factorial;
+                    pow1 *= (decimal)x;
                 }
                 Console.WriteLine($"X = {x:0.000000} SN = {SN:0.000000} SE = {SE:0.000000} Y = {F(x):0.000000}");
             }
         }
 
-        static double F(decimal x)
-        {
-            return Math.Exp((double)x * Math.Cos(Math.PI / 4)) * Math.Cos((double)x * Math.Sin(Math.PI / 4));
+        static double F(double x)
+        {            
+            return Math.Exp(x * Math.Cos(Math.PI / 4)) * Math.Cos(x * Math.Sin(Math.PI / 4));
         }
     }
 }
